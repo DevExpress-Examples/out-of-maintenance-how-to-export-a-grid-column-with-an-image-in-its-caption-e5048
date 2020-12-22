@@ -27,7 +27,7 @@ Namespace WindowsApplication3
 		Private Sub InitializeComponent()
 			Me.components = New System.ComponentModel.Container()
 			Me.customerInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-			Me.dataSet11 = New WindowsApplication3.DataSet1()
+			Me.dataSet11 = New DataSet1()
 			Me.gridControl1 = New DevExpress.XtraGrid.GridControl()
 			Me.gridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
 			Me.colColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
