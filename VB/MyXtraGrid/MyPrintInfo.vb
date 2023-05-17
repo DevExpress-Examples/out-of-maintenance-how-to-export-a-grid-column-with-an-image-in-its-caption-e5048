@@ -16,11 +16,11 @@ Namespace MyXtraGrid
 			MyBase.New(args)
 		End Sub
 
-		Private Sub MakeInflate(ByRef itb As ITextBrick, ByVal offsetByHorizontalAxis As Single, ByVal offsetByVerticalAxis As Single)
+		Private Sub MakeInflate(ByRef itb As TextBrick, ByVal offsetByHorizontalAxis As Single, ByVal offsetByVerticalAxis As Single)
 			itb.Rect = New RectangleF(itb.Rect.Location, New SizeF(itb.Rect.Width - offsetByHorizontalAxis, itb.Rect.Height - offsetByVerticalAxis))
 		End Sub
 
-		Public Overrides Sub PrintHeader(ByVal graph As IBrickGraphics)
+		Public Overrides Sub PrintHeader(ByVal graph As BrickGraphics)
 			If (Not View.OptionsPrint.PrintHeader) Then
 				Return
 			End If
@@ -56,12 +56,12 @@ Namespace MyXtraGrid
                     End If
                 Next i
 
-                Dim tBrick As ITextBrick = Nothing
+                Dim tBrick As TextBrick = Nothing
                 If elementInfo.Glyph Is Nothing AndAlso elementInfo.ImageIndex < 0 Then
                     tBrick = DrawTextBrick(graph, caption, r)
 
                 Else
-                    Dim panelBrick As IPanelBrick = New XETextPanelBrick(graph.DefaultBrickStyle)
+                    Dim panelBrick As PanelBrick = New XETextPanelBrick(graph.DefaultBrickStyle)
                     Dim offsetForBorder As Single = panelBrick.BorderWidth
 
                     If columnImageInfo.Alignment <> StringAlignment.Center Then
