@@ -14,12 +14,12 @@ namespace MyXtraGrid {
             : base(args) {
         }
 
-        private void MakeInflate(ref ITextBrick itb, float offsetByHorizontalAxis, float offsetByVerticalAxis)
+        private void MakeInflate(ref TextBrick itb, float offsetByHorizontalAxis, float offsetByVerticalAxis)
         {
             itb.Rect = new RectangleF(itb.Rect.Location, new SizeF(itb.Rect.Width - offsetByHorizontalAxis, itb.Rect.Height - offsetByVerticalAxis));
         }
 
-        public override void PrintHeader(IBrickGraphics graph)
+        public override void PrintHeader(BrickGraphics graph)
         {
             if (!View.OptionsPrint.PrintHeader) return;
 
@@ -56,7 +56,7 @@ namespace MyXtraGrid {
                         }
                     }
 
-                    ITextBrick tBrick = null;
+                    TextBrick tBrick = null;
                     if (elementInfo.Glyph == null && elementInfo.ImageIndex < 0)
                     {
                         tBrick = DrawTextBrick(graph, caption, r);
@@ -64,7 +64,7 @@ namespace MyXtraGrid {
                     }
                     else
                     {
-                        IPanelBrick panelBrick = new XETextPanelBrick(graph.DefaultBrickStyle);
+                        PanelBrick panelBrick = new XETextPanelBrick(graph.DefaultBrickStyle);
                         float offsetForBorder = panelBrick.BorderWidth;
 
                         if (columnImageInfo.Alignment != StringAlignment.Center)
